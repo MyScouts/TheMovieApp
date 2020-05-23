@@ -10,7 +10,7 @@ import com.example.themovieapp.R;
 import com.example.themovieapp.views.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 4000;
+    private static int SPLASH_TIME_OUT = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

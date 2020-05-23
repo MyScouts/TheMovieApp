@@ -3,7 +3,7 @@ package com.example.themovieapp.models.retrofit;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Client {
+public class RetrofitClient {
     public static final String BASE_URL = "https://api.themoviedb.org";
     public static Retrofit retrofit = null;
 

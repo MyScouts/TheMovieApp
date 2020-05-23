@@ -8,7 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
+import com.example.themovieapp.views.LoadingDialog;
+
 public abstract class BaseActivity<V extends ViewDataBinding> extends AppCompatActivity {
+    private LoadingDialog loadingDialog;
     private V viewDataBinding;
 
     protected abstract void init();
@@ -23,6 +26,8 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends AppCompatA
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewDataBinding = DataBindingUtil.inflate(getLayoutInflater(), setContentVewId(), null, false);
+        loadingDialog = new LoadingDialog(this);
+
         setContentView(viewDataBinding.getRoot());
 
         init();
@@ -30,6 +35,14 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends AppCompatA
 
     protected void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    protected void showLoading() {
+        loadingDialog.show();
+    }
+
+    protected void hideLoading() {
+        loadingDialog.dismiss();
     }
 }
 

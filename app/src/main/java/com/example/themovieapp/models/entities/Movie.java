@@ -150,4 +150,8 @@ public class Movie {
     public void setVote_average(Double vote_average) {
         this.vote_average = vote_average;
     }
+
+    public String getMoviePath(String path){
+        return "https://image.tmdb.org/t/p/w500" + path;
+    }
 }
